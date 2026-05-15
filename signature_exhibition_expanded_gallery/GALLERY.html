@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#8e9192",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-container-highest": "#353434",
+                    "inverse-primary": "#5f5e5e",
+                    "background": "#141313",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed": "#410000",
+                    "on-tertiary-fixed-variant": "#930000",
+                    "tertiary-fixed": "#ffdad4",
+                    "surface-container-high": "#2b2a2a",
+                    "outline-variant": "#444748",
+                    "tertiary-container": "#200000",
+                    "on-primary-fixed": "#1c1b1b",
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface-tint": "#c9c6c5",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#0a0a0a",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-background": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "tertiary": "#ffb4a8",
+                    "secondary": "#e9c349",
+                    "on-secondary-container": "#342800",
+                    "secondary-fixed": "#ffe088",
+                    "on-primary-container": "#7b7979",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#3a3939",
+                    "surface-variant": "#353434",
+                    "on-primary": "#313030",
+                    "surface-dim": "#141313",
+                    "on-tertiary": "#690000",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "inverse-on-surface": "#313030",
+                    "primary": "#c9c6c5",
+                    "on-secondary": "#3c2f00",
+                    "surface": "#141313",
+                    "secondary-container": "#af8d11",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary-container": "#df3d2c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "section-gap": "160px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "margin-tablet": "40px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bodoni Moda"],
+                    "label-caps": ["Manrope"],
+                    "display-xl": ["Bodoni Moda"],
+                    "headline-lg": ["Bodoni Moda"],
+                    "headline-lg-mobile": ["Bodoni Moda"],
+                    "body-md": ["Manrope"],
+                    "display-xl-mobile": ["Bodoni Moda"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "130%", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["64px", {"lineHeight": "110%", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["40px", {"lineHeight": "120%", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "display-xl-mobile": ["56px", {"lineHeight": "110%", "fontWeight": "800"}],
+                    "body-lg": ["20px", {"lineHeight": "160%", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+        }
+        .masonry-grid {
+            columns: 1;
+            column-gap: 32px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                columns: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 32px;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 25px rgba(233, 195, 73, 0.4);
+        }
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<div class="font-display-xl text-headline-md tracking-tighter text-on-surface">PANACHE S16</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface/70 hover:text-on-surface transition-colors duration-500" href="/index.html">HOME</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 hover:text-on-surface transition-colors duration-500" href="/events_schedule/code.html">SCHEDULE</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#">GALLERY</a>
+
+
+</nav>
+<main class="pt-32">
+<!-- Header Section -->
+<header class="px-margin-mobile md:px-margin-desktop mb-16 max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">SIGNATURE EXHIBITION</span>
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface leading-none italic">Capturing the <br/>Moments that Define Style</h2>
+</div>
+<div class="flex flex-wrap gap-4 md:gap-6 border-b border-outline-variant pb-2" id="gallery-tabs">
+<button class="tab-trigger font-label-caps text-label-caps text-secondary border-b border-secondary pb-2 transition-all" data-target="all">ALL</button>
+<button class="tab-trigger font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface pb-2 transition-all" data-target="artist">ARTIST</button>
+<button class="tab-trigger font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface pb-2 transition-all" data-target="mafil">MAFIL-E-PANACHE</button>
+<button class="tab-trigger font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface pb-2 transition-all" data-target="classic">CLASSIC</button>
+
+<button class="tab-trigger font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface pb-2 transition-all" data-target="random">RANDOM FRAMES</button>
+</div>
+</div>
+</header>
+<!-- Gallery Content Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap max-w-container-max mx-auto">
+<div id="gallery-container">
+<!-- ALL Tab (Masonry Grid Example) -->
+<div class="tab-content active" id="all">
+<div class="masonry-grid">
+<!-- 10+ Cinematic Images for All -->
+<div class="masonry-item group relative overflow-hidden bg-surface-container">
+<img alt="Avant-garde fashion model" class="w-full h-auto transition-transform duration-700 group-hover:scale-105" src="_DSC2348 (1).jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container">
+<img alt="Festival crowd" class="w-full h-auto transition-transform duration-700 group-hover:scale-105" src="_DSC2467.jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container">
+<img alt="Backstage moment" class="w-full h-auto transition-transform duration-700 group-hover:scale-105" src="_DSC0143.jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container">
+<img alt="Texture details" class="w-full h-auto transition-transform duration-700 group-hover:scale-105" src="_DSC0394.jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container">
+<img alt="DJ performance" class="w-full h-auto transition-transform duration-700 group-hover:scale-105" src="DSC03837.jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container">
+<img alt="Creative professional" class="w-full h-auto transition-transform duration-700 group-hover:scale-105" src="_DSC2346.jpg"/>
+</div>
+<!-- Additional dummy placeholders for All -->
+<div class="masonry-item group relative overflow-hidden bg-surface-container aspect-[3/4]">
+<img alt="Model portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="_DSC2436 (1).jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container aspect-square">
+<img alt="Apparel detail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="_DSC0168.jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container aspect-video">
+<img alt="Atmospheric event" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="DSC02565.jpg"/>
+</div>
+<div class="masonry-item group relative overflow-hidden bg-surface-container aspect-[4/5]">
+<img alt="Stage lighting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="_DSC0302.jpg"/>
+</div>
+</div>
+</div>
+<!-- ARTIST Tab -->
+<div class="tab-content" id="artist">
+<div class="editorial-grid">
+<!-- Artists specific grid -->
+<div class="col-span-12 md:col-span-8 aspect-video bg-surface-container overflow-hidden group">
+<img alt="Main Artist" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="ARTIST S16/DSC03536.jpg"/>
+</div>
+<div class="col-span-6 md:col-span-4 aspect-square bg-surface-container overflow-hidden group">
+<img alt="Artist portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="ARTIST S16/DSC04075.jpg"/>
+</div>
+<div class="col-span-6 md:col-span-4 aspect-square bg-surface-container overflow-hidden group">
+<img alt="Artist action" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="ARTIST S16/_DSC0347.jpg"/>
+</div>
+<div class="col-span-12 md:col-span-4 aspect-[4/3] bg-surface-container overflow-hidden group">
+<img alt="Studio setting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="ARTIST S16/DSC04548.jpg"/>
+</div>
+<div class="col-span-6 md:col-span-4 aspect-square bg-surface-container overflow-hidden group">
+<img alt="Editorial look" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="ARTIST S16/DSC03801.jpg"/>
+</div>
+<!-- ... 5 more for 10 total -->
+<div class="col-span-6 md:col-span-3 aspect-[3/4] bg-surface-container overflow-hidden group"><img class="w-full h-full object-cover transition-all" src="ARTIST S16/DSC03958.jpg"/></div>
+<div class="col-span-6 md:col-span-3 aspect-[3/4] bg-surface-container overflow-hidden group"><img class="w-full h-full object-cover transition-all" src="ARTIST S16/_DSC0396.jpg"/></div>
+<div class="col-span-6 md:col-span-3 aspect-[3/4] bg-surface-container overflow-hidden group"><img class="w-full h-full object-cover transition-all" src="ARTIST S16/DSC04673.jpg"/></div>
+<div class="col-span-6 md:col-span-3 aspect-[3/4] bg-surface-container overflow-hidden group"><img class="w-full h-full object-cover transition-all" src="ARTIST S16/DSC03743.jpg"/></div>
+<div class="col-span-12 md:col-span-12 aspect-[21/9] bg-surface-container overflow-hidden group"><img class="w-full h-full object-cover transition-all" src="ARTIST S16/DSC03777.jpg"/></div>
+</div>
+</div>
+<!-- MAFIL-E-PANACHE Tab -->
+<div class="tab-content" id="mafil">
+<div class="masonry-grid">
+<div class="masonry-item bg-surface-container aspect-video overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2430 (1).jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-[3/4] overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2355 (1).jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-square overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2436.jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-[4/5] overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2273 (1).jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-video overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2265.jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-[9/16] overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2215.jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-square overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2187.jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-video overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2434.jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-[3/4] overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2344.jpg"/></div>
+<div class="masonry-item bg-surface-container aspect-square overflow-hidden"><img class="w-full h-full object-cover" src="mafil-e-panche/_DSC2244.jpg"/></div>
+</div>
+</div>
+<!-- CLASSIC Tab -->
+<div class="tab-content" id="classic">
+<div class="editorial-grid">
+<!-- 10 high-quality classic frames -->
+<div class="col-span-12 md:col-span-6 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="classical/DSC01849.jpg"/></div>
+<div class="col-span-12 md:col-span-6 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="culture/DSC00017.jpg"/></div>
+<div class="col-span-4 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="classical/1773583468976.jpg"/></div>
+<div class="col-span-4 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="classical/1773580863108.jpg"/></div>
+<div class="col-span-4 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="classical/IMG_3993.jpg"/></div>
+<div class="col-span-3 aspect-video bg-surface-container"><img class="w-full h-full object-cover" src="culture/_DSC0056.jpg"/></div>
+<div class="col-span-3 aspect-video bg-surface-container"><img class="w-full h-full object-cover" src="culture/DSC00450 (1).jpg"/></div>
+<div class="col-span-3 aspect-video bg-surface-container"><img class="w-full h-full object-cover" src="culture/DSC00009.jpg"/></div>
+<div class="col-span-3 aspect-video bg-surface-container"><img class="w-full h-full object-cover" src="culture/DSC00450 (2).jpg"/></div>
+<div class="col-span-12 h-64 bg-surface-container"><img class="w-full h-full object-cover" src="random frames/_DSC0110.jpg"/></div>
+</div>
+</div>
+
+<!-- RANDOM FRAMES Tab -->
+<div class="tab-content" id="random">
+<div class="editorial-grid">
+<div class="col-span-12 md:col-span-4 aspect-[3/4] bg-surface-container"><img class="w-full h-full object-cover" src="random frames/_DSC0100.jpg"/></div>
+<div class="col-span-12 md:col-span-8 aspect-video bg-surface-container"><img class="w-full h-full object-cover" src="random frames/_DSC0044 (1).jpg.jpeg"/></div>
+<div class="col-span-6 md:col-span-3 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="random frames/1773581067074.jpg"/></div>
+<div class="col-span-6 md:col-span-3 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="random frames/DSC00009 (1).jpg.jpeg"/></div>
+<div class="col-span-6 md:col-span-3 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="DSC00102.jpg"/></div>
+<div class="col-span-6 md:col-span-3 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="DSC09524 (2).jpg"/></div>
+<div class="col-span-12 md:col-span-12 aspect-[21/9] bg-surface-container"><img class="w-full h-full object-cover" src="random frames/1773580318900.jpg"/></div>
+<div class="col-span-6 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="random frames/DSC00005 (1).jpg.jpeg"/></div>
+<div class="col-span-6 aspect-square bg-surface-container"><img class="w-full h-full object-cover" src="random frames/DSC00295.jpg"/></div>
+<div class="col-span-12 h-80 bg-surface-container"><img class="w-full h-full object-cover" src="random frames/1773581067074.jpg"/></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Media Team Section -->
+<section class="bg-surface-container-lowest py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">MEDIA TEAM</span>
+<h2 class="font-display-xl text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight">The Visionaries <br/>behind the lens.</h2>
+</div>
+<p class="font-body-lg text-on-surface-variant max-w-md md:mb-2 italic">
+                        "Documenting the fusion of fashion and culture with cinematic precision."
+                    </p>
+</div>
+
+<!-- Team Member 1 -->
+<div class="group flex flex-col">
+<div class="relative overflow-hidden aspect-[16/9] mb-6 hover-glow transition-all duration-500">
+<img alt="Julian Vane" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" src="GTK01818.jpg.jpeg"/>
+<div class="absolute top-4 right-4 flex flex-col gap-3 translate-x-12 group-hover:translate-x-0 transition-transform duration-500">
+<a class="w-10 h-10 bg-black/60 backdrop-blur-md flex items-center justify-center text-secondary hover:bg-secondary hover:text-on-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">link</span>
+</a>
+<a class="w-10 h-10 bg-black/60 backdrop-blur-md flex items-center justify-center text-secondary hover:bg-secondary hover:text-on-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] tracking-[0.3em] text-secondary mb-2">MEDIA HEAD</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">UJJWAL KANT</h4>
+<div class="h-px w-full bg-outline-variant mt-4 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-background border-t border-outline-variant w-full py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="font-display-xl text-headline-md text-on-surface">PANACHE S16</div>
+<div class="flex gap-8 my-8 md:my-0">
+
+</div>
+<p class="font-label-caps text-label-caps text-on-primary-container text-center md:text-right">
+                © 2026 PANACHE S16. THE PREMIERE OF STYLE.
+            </p>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const triggers = document.querySelectorAll('.tab-trigger');
+            const contents = document.querySelectorAll('.tab-content');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const target = trigger.getAttribute('data-target');
+
+                    // Update triggers UI
+                    triggers.forEach(t => {
+                        t.classList.remove('text-secondary', 'border-b', 'border-secondary');
+                        t.classList.add('text-on-surface-variant');
+                    });
+                    trigger.classList.remove('text-on-surface-variant');
+                    trigger.classList.add('text-secondary', 'border-b', 'border-secondary');
+
+                    // Update contents UI
+                    contents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body></html>

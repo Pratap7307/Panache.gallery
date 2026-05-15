@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#8e9192",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-container-highest": "#353434",
+                    "inverse-primary": "#5f5e5e",
+                    "background": "#141313",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed": "#410000",
+                    "on-tertiary-fixed-variant": "#930000",
+                    "tertiary-fixed": "#ffdad4",
+                    "surface-container-high": "#2b2a2a",
+                    "outline-variant": "#444748",
+                    "tertiary-container": "#200000",
+                    "on-primary-fixed": "#1c1b1b",
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface-tint": "#c9c6c5",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#0a0a0a",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-background": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "tertiary": "#ffb4a8",
+                    "secondary": "#e9c349",
+                    "on-secondary-container": "#342800",
+                    "secondary-fixed": "#ffe088",
+                    "on-primary-container": "#7b7979",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#3a3939",
+                    "surface-variant": "#353434",
+                    "on-primary": "#313030",
+                    "surface-dim": "#141313",
+                    "on-tertiary": "#690000",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "inverse-on-surface": "#313030",
+                    "primary": "#c9c6c5",
+                    "on-secondary": "#3c2f00",
+                    "surface": "#141313",
+                    "secondary-container": "#af8d11",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary-container": "#df3d2c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "section-gap": "160px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "margin-tablet": "40px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bodoni Moda"],
+                    "label-caps": ["Manrope"],
+                    "display-xl": ["Bodoni Moda"],
+                    "headline-lg": ["Bodoni Moda"],
+                    "headline-lg-mobile": ["Bodoni Moda"],
+                    "body-md": ["Manrope"],
+                    "display-xl-mobile": ["Bodoni Moda"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "130%", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["64px", {"lineHeight": "110%", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["40px", {"lineHeight": "120%", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "display-xl-mobile": ["56px", {"lineHeight": "110%", "fontWeight": "800"}],
+                    "body-lg": ["20px", {"lineHeight": "160%", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .premium-glow:hover {
+            box-shadow: 0 0 30px rgba(233, 195, 73, 0.2);
+        }
+        .crimson-glow:hover {
+            box-shadow: 0 0 30px rgba(223, 61, 44, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<span class="font-display-xl text-headline-md tracking-tighter text-on-surface">PANACHE S16</span>
+<div class="hidden md:flex gap-10">
+<a class="font-label-caps text-label-caps text-on-surface/70 hover:text-on-surface transition-colors duration-500" href="/index.html">HOME</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#">SCHEDULE</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 hover:text-on-surface transition-colors duration-500" href="/signature_exhibition_expanded_gallery/GALLERY.html">GALLERY</a>
+
+
+</nav>
+<main class="pt-32">
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block">THE ART OF SHOWCASE</span>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl leading-none">THE SPECTACLE</h1>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter pb-10">
+<div class="w-full group relative overflow-hidden premium-glow transition-all duration-700 aspect-[3/4] bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A dynamic high-fashion concert stage with dramatic golden spotlights cutting through a misty atmosphere. The aesthetic is cinematic and premium, featuring deep charcoal shadows and brilliant warm highlights that emphasize an avant-garde cultural performance. The overall mood is sophisticated and exclusive, mimicking a high-end luxury event." src="schedule.gallery/DSC03757.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">CONCERT</span>
+<h3 class="font-headline-md text-headline-md mb-4">Concert Night</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Artist , Comedian and bands etc .</p>
+
+</div>
+</div>
+<div class="w-full group relative overflow-hidden crimson-glow transition-all duration-700 aspect-[3/4] bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A cinematic close-up of a rock musician performing under intense red and magenta stage lighting. The shot captures a sense of raw energy and musical prestige with sharp focus and deep artistic shadows. The visual style is editorial and avant-garde, perfectly aligning with a high-end festival atmosphere." src="schedule.gallery/DSC00009 (1).jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="font-label-caps text-label-caps text-tertiary mb-2 block">CULTURE SHOWCASE</span>
+<h3 class="font-headline-md text-headline-md mb-4">Cultural Events</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Showcase of variour culture , lifestyle , music and dance etc .</p>
+
+</div>
+</div>
+<div class="w-full group relative overflow-hidden premium-glow transition-all duration-700 aspect-[3/4] bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A contemporary dance troupe performing a synchronized routine in a dark, atmospheric studio with a single strong key light. The high-contrast black and white photography style creates a sense of luxury and elite artistry. Every movement is sharp and intentional, evoking a sophisticated editorial look." src="schedule.gallery/_DSC0176.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block">RANDOM FRAMES</span>
+<h3 class="font-headline-md text-headline-md mb-4">Random Frames</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Random moments from the event , candid shots of the audience and behind the scenes etc .</p>
+
+
+</main>
+<footer class="w-full py-section-gap bg-background border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-display-xl text-headline-md text-on-surface">PANACHE S16</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant tracking-[0.3em]">© 2026PANACHE S16. THE PREMIERE OF STYLE.</span>
+</div>
+<div class="flex gap-12 mt-8 md:mt-0">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:text-tertiary transition-colors duration-300" href="#">PRIVACY</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:text-tertiary transition-colors duration-300" href="#">PRESS KIT</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:text-tertiary transition-colors duration-300" href="#">CONTACT</a>
+</div>
+
+</button>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#8e9192",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-container-highest": "#353434",
+                    "inverse-primary": "#5f5e5e",
+                    "background": "#141313",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed": "#410000",
+                    "on-tertiary-fixed-variant": "#930000",
+                    "tertiary-fixed": "#ffdad4",
+                    "surface-container-high": "#2b2a2a",
+                    "outline-variant": "#444748",
+                    "tertiary-container": "#200000",
+                    "on-primary-fixed": "#1c1b1b",
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface-tint": "#c9c6c5",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#0a0a0a",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-background": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "tertiary": "#ffb4a8",
+                    "secondary": "#e9c349",
+                    "on-secondary-container": "#342800",
+                    "secondary-fixed": "#ffe088",
+                    "on-primary-container": "#7b7979",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#3a3939",
+                    "surface-variant": "#353434",
+                    "on-primary": "#313030",
+                    "surface-dim": "#141313",
+                    "on-tertiary": "#690000",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "inverse-on-surface": "#313030",
+                    "primary": "#c9c6c5",
+                    "on-secondary": "#3c2f00",
+                    "surface": "#141313",
+                    "secondary-container": "#af8d11",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#241a00",
+                    "on-tertiary-container": "#df3d2c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "section-gap": "160px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px",
+                    "margin-tablet": "40px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bodoni Moda"],
+                    "label-caps": ["Manrope"],
+                    "display-xl": ["Bodoni Moda"],
+                    "headline-lg": ["Bodoni Moda"],
+                    "headline-lg-mobile": ["Bodoni Moda"],
+                    "body-md": ["Manrope"],
+                    "display-xl-mobile": ["Bodoni Moda"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "130%", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.2em", "fontWeight": "700"}],
+                    "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["64px", {"lineHeight": "110%", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["40px", {"lineHeight": "120%", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "display-xl-mobile": ["56px", {"lineHeight": "110%", "fontWeight": "800"}],
+                    "body-lg": ["20px", {"lineHeight": "160%", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.glass-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px)
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA5q67limcv_N4ELF2gkAumx2p9-Ak4mg3QNy6yOA49fyNfOTBtluJSUoSQ-EnUQut2-I0rNo3DbjGhAxRsDr5yqPSEM0UJdR5rfAoJr-BTXEm93lUNgIvB2vpPGxvudUGlVwqRyJqSZHU7QAypqpw_d3qEoNY073JsfopYttio4tDjFy8Dv4uTTXvI8XDrGW6b0PuyEgysL3-CuH0bGQKdWyCj3zB-rp3R3v05BelurB-RcnePFHd_CB90EatwKuxDcZj9nxKF2G8);
+    opacity: 0.05;
+    pointer-events: none
+    }
+.hero-gradient {
+    background: linear-gradient(to bottom, rgba(20, 19, 19, 0.4) 0%, rgba(20, 19, 19, 0.9) 100%)
+    }
+.reveal-stagger span {
+    display: inline-block;
+    opacity: 0;
+    transform: translatey(20px);
+    animation: reveal 0.8s forwards
+    }
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-transparent backdrop-blur-xl dark:bg-transparent">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<div class="font-display-xl text-headline-md tracking-tighter text-on-surface dark:text-on-surface">PANACHE S16</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 hover:text-on-surface transition-colors duration-500" href="/events_schedule/code.html">SCHEDULE</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 hover:text-on-surface transition-colors duration-500" href="/signature_exhibition_expanded_gallery/GALLERY.html">GALLERY</a>
+
+
+
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of a high-end fashion runway stage illuminated by dramatic golden spotlights. Mist curls around the sleek black flooring while sharp beams of light pierce through a dark, atmospheric void. The scene is captured with a shallow depth of field, emphasizing a luxurious and exclusive cultural gala atmosphere consistent with a prestigious charcoal and gold brand aesthetic." src="home.gallery/_DSC0229.jpg"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute inset-0 grain-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile">
+<div class="mb-6">
+<p class="font-label-caps text-label-caps text-secondary tracking-[0.4em] mb-4"> Chetan Sharma</p>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-secondary leading-none">
+                        PANACHE S16
+                    </h1>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-center gap-gutter mt-12">
+<div class="text-left border-l border-secondary/30 pl-6">
+<p class="font-label-caps text-label-caps text-on-surface-variant">DATE</p>
+<p class="font-headline-md text-on-surface">MARCH 14-21</p>
+</div>
+<div class="text-left border-l border-secondary/30 pl-6">
+<p class="font-label-caps text-label-caps text-on-surface-variant">VENUE</p>
+<p class="font-headline-md text-on-surface">VIVEKANANDA GLOBAL UNIVERSITY</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-center mt-16">
+    <a href="/events_schedule/code.html">
+<button class="bg-secondary text-on-secondary-container px-10 py-5 font-label-caps text-label-caps text-[14px] hover:scale-105 transition-transform duration-300">
+                    EXPLORE EVENTS
+                    </button></a>
+                    <a href="/signature_exhibition_expanded_gallery/GALLERY.html">
+<button class="border border-on-surface text-on-surface px-10 py-5 font-label-caps text-label-caps text-[14px] hover:bg-on-surface hover:text-background transition-all duration-300">
+                        VIEW GALLERY
+                    </button></a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+<span class="material-symbols-outlined text-on-surface text-3xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- About Section: The Narrative -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Left Side: Immersive Visuals -->
+<div class="md:col-span-6 relative group">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" data-alt="A sophisticated editorial portrait of a performer in avant-garde attire, blending traditional cultural motifs with futuristic fashion elements. The subject is draped in textured fabrics that catch the subtle, high-contrast studio lighting. The background is a deep charcoal grey with soft shadows, creating a prestigious and artistic mood that mirrors the high-end magazine aesthetic of the festival." src="home.gallery/_DSC0138.jpg"/>
+</div>
+<!-- Floating Overlaid Image -->
+<div class="absolute -bottom-12 -right-8 w-2/3 aspect-video hidden md:block border-[12px] border-background shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A wide-angle cinematic shot of a vibrant crowd at a luxury festival, captured with a focus on motion blur and bokeh. Warm golden light spills over the audience as they witness a high-energy performance. The visual composition uses a letterbox format to enhance the cinematic feel, with rich blacks and luminous highlights defining the upscale atmosphere." src="home.gallery/_DSC0043.jpg"/>
+</div>
+</div>
+<!-- Right Side: Storytelling Copy -->
+<div class="md:col-span-5 md:col-start-8 mt-16 md:mt-0">
+<div class="mb-8">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest block mb-4">INTRODUCTION</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight">The Narrative</h2>
+</div>
+<div class="space-y-8">
+<p class="font-body-lg text-on-surface/90 leading-relaxed">
+                            Panache S16 is more than a festival; it is a meticulously curated sensory journey. This year, we transcend the boundaries of traditional performance to explore the intersection of heritage and avant-garde expression.
+                        </p>
+<div class="h-px w-24 bg-secondary"></div>
+<p class="font-body-md text-on-surface-variant leading-loose">
+                            From the high-stakes drama of the runway to the rhythmic intensity of the main stage, our narrative is woven from the threads of creativity, culture, and pure technical mastery. We invite you to witness the evolution of style where every movement is a masterpiece and every moment is legendary.
+                        </p>
+<div class="pt-6 grid grid-cols-2 gap-gutter">
+<div>
+<p class="font-display-xl text-headline-lg text-secondary">100+</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-tighter">Artistic Showcases</p>
+</div>
+<div>
+<p class="font-display-xl text-headline-lg text-secondary">50+</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-tighter">EVENTS</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><!-- Media Team Section: The Visionaries -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="mb-12 flex justify-between items-end">
+<div>
+<span class="font-label-caps text-label-caps text-secondary tracking-widest block mb-4"> CORE TEAM</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight">The Visionaries</h2>
+</div>
+<div class="hidden md:flex gap-4 mb-2">
+<button class="w-12 h-12 border border-secondary/30 flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all duration-300" onclick="document.getElementById('team-slider').scrollBy({left: -400, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 border border-secondary/30 flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all duration-300" onclick="document.getElementById('team-slider').scrollBy({left: 400, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Carousel Container -->
+<div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-gutter pb-8" id="team-slider" style="-ms-overflow-style: none; scrollbar-width: none;">
+
+<!-- Frame 1 -->
+ 
+<div class="min-w-[90%] md:min-w-[70%] lg:min-w-[60%] snap-start group">
+<div class="aspect-[16/9] mb-6 overflow-hidden relative">
+<img alt="Director of Photography" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="home.gallery/DSC05305.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-2 uppercase">TEAM  PANACHE  S16</p>
+<h3 class="font-headline-md text-on-surface">Core</h3>
+</div>
+
+<!-- Frame 2 -->
+
+<div class="min-w-[90%] md:min-w-[70%] lg:min-w-[60%] snap-start group">
+<div class="aspect-[16/9] mb-6 overflow-hidden relative">
+<img alt="Creative Lead" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="home.gallery/GTK09998.jpg.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-2 uppercase">TEAM  PANACHE  S16</p>
+<h3 class="font-headline-md text-on-surface">Team behind the lens</h3>
+</div>
+
+<!-- Frame 3 -->
+<div class="min-w-[90%] md:min-w-[70%] lg:min-w-[60%] snap-start group">
+<div class="aspect-[16/9] mb-6 overflow-hidden relative">
+<img alt="Editorial Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="home.gallery/DSC05282.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-2 uppercase">TEAM  PANACHE  S16</p>
+<h3 class="font-headline-md text-on-surface">President</h3>
+</div>
+<!-- Frame 4 -->
+<div class="min-w-[90%] md:min-w-[70%] lg:min-w-[60%] snap-start group">
+<div class="aspect-[16/9] mb-6 overflow-hidden relative">
+<img alt="Sound Curators" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="home.gallery/DOC-20260330-WA0007..jpg.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-2 uppercase">TEAM  PANACHE  S16</p>
+<h3 class="font-headline-md text-on-surface">The Mans behind making peace</h3>
+</div>
+
+<!-- Frame 5 -->
+<div class="min-w-[90%] md:min-w-[70%] lg:min-w-[60%] snap-start group">
+<div class="aspect-[16/9] mb-6 overflow-hidden relative">
+<img alt="Social Media" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" src="home.gallery/DOC-20260330-WA0013..jpg.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<p class="font-label-caps text-[10px] text-secondary mb-2 uppercase">TEAM  PANACHE  S16</p>
+<h3 class="font-headline-md text-on-surface">People That Make Events Successful</h3>
+</div>
+</div>
+<!-- Pagination Dots for Mobile -->
+<div class="flex justify-center gap-2 mt-8 md:hidden">
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+<div class="w-2 h-2 bg-white/20 rounded-full"></div>
+<div class="w-2 h-2 bg-white/20 rounded-full"></div>
+<div class="w-2 h-2 bg-white/20 rounded-full"></div>
+<div class="w-2 h-2 bg-white/20 rounded-full"></div>
+</div>
+</section>
+<!-- Minimalist Divider -->
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="w-full h-px bg-white/5 relative">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/20 to-transparent"></div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-background dark:bg-background border-t border-outline-variant mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-gutter w-full max-w-container-max mx-auto">
+<div class="font-display-xl text-headline-md text-on-surface">PANACHE S16</div>
+<div class="flex flex-col items-center gap-4">
+<p class="font-label-caps text-label-caps text-on-surface-variant">© 2026 PANACHE S16. THE PREMIERE OF STYLE.</p>
+
+</div>
+</footer>
+</body></html>
