@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-outline: #8e9192;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-primary-fixed-variant: #474646;
+  --color-surface-container-highest: #353434;
+  --color-inverse-primary: #5f5e5e;
+  --color-background: #141313;
+  --color-secondary-fixed-dim: #e9c349;
+  --color-on-tertiary-fixed: #410000;
+  --color-on-tertiary-fixed-variant: #930000;
+  --color-tertiary-fixed: #ffdad4;
+  --color-surface-container-high: #2b2a2a;
+  --color-outline-variant: #444748;
+  --color-tertiary-container: #200000;
+  --color-on-primary-fixed: #1c1b1b;
+  --color-inverse-surface: #e5e2e1;
+  --color-on-surface-variant: #c4c7c7;
+  --color-surface-tint: #c9c6c5;
+  --color-surface-container: #201f1f;
+  --color-primary-container: #0a0a0a;
+  --color-primary-fixed: #e5e2e1;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-on-background: #e5e2e1;
+  --color-on-surface: #e5e2e1;
+  --color-tertiary: #ffb4a8;
+  --color-secondary: #e9c349;
+  --color-on-secondary-container: #342800;
+  --color-secondary-fixed: #ffe088;
+  --color-on-primary-container: #7b7979;
+  --color-primary-fixed-dim: #c9c6c5;
+  --color-on-error-container: #ffdad6;
+  --color-surface-bright: #3a3939;
+  --color-surface-variant: #353434;
+  --color-on-primary: #313030;
+  --color-surface-dim: #141313;
+  --color-on-tertiary: #690000;
+  --color-tertiary-fixed-dim: #ffb4a8;
+  --color-inverse-on-surface: #313030;
+  --color-primary: #c9c6c5;
+  --color-on-secondary: #3c2f00;
+  --color-surface: #141313;
+  --color-secondary-container: #af8d11;
+  --color-on-secondary-fixed-variant: #574500;
+  --color-on-error: #690005;
+  --color-surface-container-low: #1c1b1b;
+  --color-on-secondary-fixed: #241a00;
+  --color-on-tertiary-container: #df3d2c;
+
+  /* Border Radius */
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Spacing */
+  --spacing-margin-desktop: 80px;
+  --spacing-section-gap: 160px;
+  --spacing-gutter: 32px;
+  --spacing-margin-mobile: 24px;
+  --spacing-margin-tablet: 40px;
+  --spacing-container-max: 1440px;
+
+  /* Font Families */
+  --font-headline-md: "Bodoni Moda", serif;
+  --font-label-caps: "Manrope", sans-serif;
+  --font-display-xl: "Bodoni Moda", serif;
+  --font-headline-lg: "Bodoni Moda", serif;
+  --font-headline-lg-mobile: "Bodoni Moda", serif;
+  --font-body-md: "Manrope", sans-serif;
+  --font-display-xl-mobile: "Bodoni Moda", serif;
+  --font-body-lg: "Manrope", sans-serif;
+}
+
+/* Custom utilities */
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.grain-overlay {
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA5q67limcv_N4ELF2gkAumx2p9-Ak4mg3QNy6yOA49fyNfOTBtluJSUoSQ-EnUQut2-I0rNo3DbjGhAxRsDr5yqPSEM0UJdR5rfAoJr-BTXEm93lUNgIvB2vpPGxvudUGlVwqRyJqSZHU7QAypqpw_d3qEoNY073JsfopYttio4tDjFy8Dv4uTTXvI8XDrGW6b0PuyEgysL3-CuH0bGQKdWyCj3zB-rp3R3v05BelurB-RcnePFHd_CB90EatwKuxDcZj9nxKF2G8);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.hero-gradient {
+  background: linear-gradient(to bottom, rgba(20, 19, 19, 0.4) 0%, rgba(20, 19, 19, 0.9) 100%);
+}
+
+/* Hide scrollbar for team slider */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Base body */
+body {
+  background-color: #141313;
+  color: #e5e2e1;
+  font-family: "Manrope", sans-serif;
+}
+
+::selection {
+  background-color: #e9c349;
+  color: #3c2f00;
+}
